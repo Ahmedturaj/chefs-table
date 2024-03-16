@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { FaClock, FaFireAlt } from 'react-icons/fa';
 
-const Recipe = ({ recipe }) => {
+const Recipe = ({ recipe, handleWantToCook}) => {
     const { recipe_name, recipe_image, short_description, ingredients, preparing_time, calories } = recipe;
     return (
         <div>
@@ -33,7 +33,7 @@ const Recipe = ({ recipe }) => {
                     </div>
                    </div>
                     <div className="card-actions">
-                        <button  style={{transition:'all 1s'}} className="btn rounded-full  ml-3 bg-[#0BE58A] hover:translate-x-1 hover:scale-105">Want To Cook</button>
+                        <button onClick={()=>handleWantToCook(recipe)}  style={{transition:'all 1s'}} className="btn rounded-full  ml-3 bg-[#0BE58A] hover:translate-x-1 hover:scale-105">Want To Cook</button>
                     </div>
                 </div>
             </div>
@@ -41,6 +41,7 @@ const Recipe = ({ recipe }) => {
     );
 };
 Recipe.propTypes = {
-    recipe: PropTypes.array
+    recipe: PropTypes.object,
+    handleWantToCook:PropTypes.func
 }
 export default Recipe;
