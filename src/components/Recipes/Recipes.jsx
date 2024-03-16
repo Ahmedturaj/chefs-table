@@ -8,6 +8,9 @@ import SideBar from "../SideBar/SideBar";
 const Recipes = () => {
     const [recipes, setRecipes] = useState([]);
     const [sideItems, setSideItems] = useState([]);
+    const [currentItems, setCurrentItems] = useState([]);
+    const [totalCalories, setTotalCalories] = useState(0);
+    const [totalTimes, setTotalTime] = useState(0);
     useEffect(() => {
         const loadRecipes = async () => {
             const res = await fetch('recipe.json');
@@ -18,7 +21,7 @@ const Recipes = () => {
     }, [])
 
     const handleWantToCook = (recipe) => {
-       
+
         let recipeExists = false;
 
         for (const item of sideItems) {
@@ -36,11 +39,23 @@ const Recipes = () => {
     }
 
 
-    const handleCurrentlyCook=(sideItem)=>{
-        const remainingBookMark = sideItems.filter(item=>item.recipe_id!==sideItem.recipe_id);
-        setSideItems(remainingBookMark);
-        toast.success(`${sideItem.recipe_name} removed successfully`)
+    const handleCurrentlyCook = (sideItem) => {
+        const remainingSideItems = sideItems.filter(item => item.recipe_id !== sideItem.recipe_id);
+        setSideItems(remainingSideItems);
+    };
+    const handleAddToCurrentlyCook = (sideItem) => {
+        const newTotalTimes = totalTimes + sideItem.preparing_time;
+        setTotalTime(newTotalTimes);
+        const newTotalCalories = totalCalories + sideItem.calories;
+        setTotalCalories(newTotalCalories);
+        const removedItem = sideItems.find(item => item.recipe_id === sideItem.recipe_id);
+        if (removedItem) {
+            const newCurrentItems = [...currentItems, removedItem]
+            setCurrentItems(newCurrentItems);
+            toast.success(`${sideItem.recipe_name} added to Currently Cooking successfully`);
+        }
     }
+
     return (
         <div>
             <div className="">
@@ -58,11 +73,21 @@ const Recipes = () => {
                     }
 
                 </div>
-                <div className="border h-[580px] p-4 rounded-2xl shadow-2xl">
+                <div className="border max-h-[690px] p-4 rounded-2xl shadow-2xl">
                     <SideBar
                         sideItems={sideItems}
                         handleCurrentlyCook={handleCurrentlyCook}
+                        handleAddToCurrentlyCook={handleAddToCurrentlyCook}
+                        currentItems={currentItems}
                     ></SideBar>
+                    <div className="flex flex-col items-end mt-10">
+                       <div className="">
+                       Total-Time={totalTimes}
+                       </div>
+                       <div className="">
+                       Total-Calories={totalCalories}
+                       </div>
+                    </div>
                 </div>
             </div>
             <Toaster
