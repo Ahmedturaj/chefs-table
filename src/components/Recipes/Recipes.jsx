@@ -1,6 +1,17 @@
+import { useEffect, useState } from "react";
+import Recipe from "../Recipe/Recipe";
 
 
 const Recipes = () => {
+    const [recipes, setRecipes] = useState([]);
+    useEffect(() => {
+        const loadRecipes = async () => {
+            const res = await fetch('recipe.json');
+            const data = await res.json();
+            setRecipes(data);
+        }
+        loadRecipes();
+    }, [])
     return (
         <div>
             <div className="">
@@ -11,7 +22,14 @@ const Recipes = () => {
             </div>
             <div className="
             ">
-                
+                <div className="">
+{
+    recipes.map(recipe=><Recipe key={recipe.id} recipe={recipe}></Recipe>)
+}
+                </div>
+               <div className="">
+                    {/* side bar */}
+                </div>
             </div>
         </div>
     );
