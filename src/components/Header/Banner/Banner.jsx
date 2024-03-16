@@ -8,9 +8,9 @@ const Banner = () => {
                 <div className="hero-content  text-neutral-content text-center">
                     <div className="">
                         <h1 className="mb-5 text-4xl font-bold">Indulge in savory aromas, exquisite flavors, and delightful textures of our signature gourmet dish, a culinary masterpiece.</h1>
-                        <p className="my-5 text-xl">Savor the delectable fusion of spices and fresh ingredients in our signature dish, a culinary symphony that will leave you craving for more.</p>
-                        <button className="btn rounded-full bg-[#0BE58A]">Explore Now</button>
-                        <button className="btn rounded-full btn-outline ml-3 text-white">Our Feedback</button>
+                        <p className="my-8 text-xl">Savor the delectable fusion of spices and fresh ingredients in our signature dish, a culinary symphony that will leave you craving for more.</p>
+                        <button style={{transition:'all 1s'}} className="btn rounded-full bg-[#0BE58A] hover:translate-x-1 hover:scale-105">Explore Now</button>
+                        <button style={{transition:'all 1s'}} className="btn rounded-full btn-outline ml-3 text-white hover:translate-x-1 hover:scale-105">Our Feedback</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,56 @@
+[
+    {
+        "recipe_id": 1,
+        "recipe_name": "Chicken Stir-Fry",
+        "recipe_image": "https://i.ibb.co/2kYrTdS/image.png",
+        "short_description": "A delicious and easy-to-make chicken stir-fry with fresh vegetables and savory sauce.",
+        "ingredients": ["550 g chicken", "120 ml soy sauce", "200 g basil leaf", "400 g mushroom"],
+        "preparing_time": "30 min",
+        "calories": "320 calories"
+    },
+    {
+        "recipe_id": 2,
+        "recipe_name": "Spaghetti Carbonara",
+        "recipe_image": "https://i.ibb.co/2gTnj59/image.png",
+        "short_description": "Classic Italian pasta dish featuring creamy sauce, crispy bacon, and Parmesan cheese.",
+        "ingredients": ["400 g spaghetti", "200 g bacon", "4 eggs", "100 g grated Parmesan cheese"],
+        "preparing_time": "25 min",
+        "calories": "480 calories"
+    },
+    {
+        "recipe_id": 3,
+        "recipe_name": "Vegetable Curry",
+        "recipe_image": "https://i.ibb.co/MB6zjmr/image.png",
+        "short_description": "A fragrant and flavorful curry packed with assorted vegetables and aromatic spices.",
+        "ingredients": ["300 g mixed vegetables", "400 ml coconut milk", "2 tbsp curry paste", "100 g spinach"],
+        "preparing_time": "40 min",
+        "calories": "250 calories"
+    },
+    {
+        "recipe_id": 4,
+        "recipe_name": "Grilled Salmon",
+        "recipe_image": "https://i.ibb.co/ZhwwjNj/image.png",
+        "short_description": "Juicy and tender salmon fillets marinated in a zesty lemon and herb mixture, perfect for a healthy meal.",
+        "ingredients": ["4 salmon fillets", "1 lemon (juiced)", "2 cloves garlic (minced)", "2 tbsp olive oil"],
+        "preparing_time": "20 min",
+        "calories": "280 calories"
+    },
+    {
+        "recipe_id": 5,
+        "recipe_name": "Mushroom Risotto",
+        "recipe_image": "https://i.ibb.co/xMTwVt4/image.png",
+        "short_description": "Creamy and comforting risotto infused with earthy mushrooms and rich Parmesan cheese.",
+        "ingredients": ["300 g Arborio rice", "200 g mushrooms", "1 onion (finely chopped)", "1 L vegetable broth"],
+        "preparing_time": "35 min",
+        "calories": "380 calories"
+    },
+    {
+        "recipe_id": 6,
+        "recipe_name": "Homemade Pizza",
+        "recipe_image": "https://i.ibb.co/86w9nKD/image.png",
+        "short_description": "Create your own delicious pizza masterpiece with your favorite toppings and gooey melted cheese.",
+        "ingredients": ["300 g pizza dough", "200 g mozzarella cheese", "150 g pepperoni slices", "1 bell pepper (sliced)"],
+        "preparing_time": "45 min",
+        "calories": "420 calories"
+    }
+]
