@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import SideItem from '../SideItem/SideItem';
 
 
-const SideBar = ({sideItems}) => {
+const SideBar = ({sideItems,handleCurrentlyCook}) => {
     return (
         <div>
             <div className="">
@@ -20,7 +20,9 @@ const SideBar = ({sideItems}) => {
     </thead>
     <tbody>
       {
-        sideItems.map(sideItem=><SideItem key={sideItem.recipe_id} sideItem={sideItem}></SideItem>)
+        sideItems.map((sideItem, ind)=><SideItem key={sideItem.recipe_id} ind={ind} sideItem={sideItem}
+        handleCurrentlyCook={handleCurrentlyCook}
+        ></SideItem>)
       }
     </tbody>
   </table>
@@ -33,7 +35,8 @@ const SideBar = ({sideItems}) => {
     );
 };
 SideBar.propTypes={
-    sideItems:PropTypes.array
+    sideItems:PropTypes.array,
+    handleCurrentlyCook:PropTypes.func
 }
 
 

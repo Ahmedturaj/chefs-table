@@ -35,6 +35,12 @@ const Recipes = () => {
         }
     }
 
+
+    const handleCurrentlyCook=(sideItem)=>{
+        const remainingBookMark = sideItems.filter(item=>item.recipe_id!==sideItem.recipe_id);
+        setSideItems(remainingBookMark);
+        toast.success(`${sideItem.recipe_name} removed successfully`)
+    }
     return (
         <div>
             <div className="">
@@ -43,8 +49,8 @@ const Recipes = () => {
                     Dive into the world of Our Recipes, where culinary creativity meets culinary expertise. From timeless classics to bold innovations, our diverse collection promises to tantalize your taste buds and elevate every dining experience to new heights of deliciousness
                 </p>
             </div>
-            <div className="flex flex-col lg:flex-row  justify-center gap-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="flex flex-col lg:flex-row  justify-center gap-10 w-full mt-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
                     {
                         recipes.map(recipe => <Recipe key={recipe.recipe_id} recipe={recipe}
                             handleWantToCook={handleWantToCook}
@@ -52,9 +58,10 @@ const Recipes = () => {
                     }
 
                 </div>
-                <div className="">
+                <div className="border h-[580px] p-4 rounded-2xl shadow-2xl">
                     <SideBar
                         sideItems={sideItems}
+                        handleCurrentlyCook={handleCurrentlyCook}
                     ></SideBar>
                 </div>
             </div>
@@ -75,7 +82,7 @@ const Recipes = () => {
 
                     // Default options for specific types
                     success: {
-                        duration: 2000,
+                        duration: 1500,
                         theme: {
                             primary: 'green',
                             secondary: 'black',
